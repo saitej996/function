@@ -1,0 +1,54 @@
+<html>
+<head>
+    
+</head>
+<body>
+    <div class="box">
+    <h2>t-shirt product</h2>
+
+<img id="mainimage"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFEc5pBthjibrh7Ej0WJfkyZkAZfMfxLlLpZ5DPRr8A&s">
+
+<div>
+    <img class="small-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFEc5pBthjibrh7Ej0WJfkyZkAZfMfxLlLpZ5DPRr8A&s" onclick="changeimage(this.src)">
+<img class="small-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe-tF40lEIeWlOvNX0L9GBFjSn-o66vudpnHBub2shCg&s=10" onclick="changeimage(this.src)">
+<img class="small-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBm5h8p1UBi8-vrq3Y8anA0dH9QrpUWwinFbRJ7CKqA&s=10" onclick="changeimage(this.src)">
+</div>
+<h3>select size</h3>
+
+<button class="size-btn" onclick="selectsize(this,'S',500)">S</button>
+<button class="size-btn" onclick="selectsize(this,'M',700)">M</button>
+<button class="size-btn" onclick="selectsize(this,'L',900)">L</button>
+<button class="size-btn" onclick="selectsize(this,'XL',1200)">XL</button>
+
+<h3>selectedsize: <span id="selectedsize">S</span></h3>
+<h3>price:₹<span id="price">500</span></h3>
+
+<button onclick="addtoCart()">addtocart</button>
+</div>
+
+<script>
+    function changeImage(imagepath){
+        document.getElementById("mainimage").src = imagepath;
+    }
+    function selectSize(button,size,price){
+        document.getElementById("selectsize").innerHTML=size;
+        document.getElementById("price").innerHTML=price;
+
+        let buttons=document.getElementsByClassName("size-btn");
+
+        for (let i=0; i < buttons.length;i++){
+            buttons[i].classList.remove("active");
+        }
+        button.classlist.add("active");
+    }
+
+function AddToCart(){
+            let size=document.getElementById("selectedsize").innerHTML;
+            let price=document.getElementById("price").innerHTML;
+            alt("product added successfully\nSize:"+ size +"\nprice:₹" + price);
+}
+
+</script>
+
+</body>
+</html>

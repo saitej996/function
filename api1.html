@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T-Shirt Product</title>
+
+    <style>
+        .box {
+            background-color: rgb(197, 76, 100);
+            width: 350px;
+            margin: 30px auto;
+            text-align: center;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+
+        #mainimage {
+            width: 250px;
+            height: 250px;
+        }
+
+        .small-img {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .active {
+            background: black;
+            color: white;
+            
+        }
+        button:hover{
+            background-color: rgb(0, 255, 213);
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>T-Shirt</h2>
+
+  
+    <img id="mainimage"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFEc5pBthjibrh7Ej0WJfkyZkAZfMfxLlLpZ5DPRr8A&s">
+
+    <br><br>
+
+  
+    <img class="small-img"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFEc5pBthjibrh7Ej0WJfkyZkAZfMfxLlLpZ5DPRr8A&s"
+         onclick="changeImage(this.src, 'S', 500)">
+
+    <img class="small-img"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe-tF40lEIeWlOvNX0L9GBFjSn-o66vudpnHBub2shCg&s=10"
+         onclick="changeImage(this.src, 'M',700)">
+
+    <img class="small-img"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBm5h8p1UBi8-vrq3Y8anA0dH9QrpUWwinFbRJ7CKqA&s=10"
+         onclick="changeImage(this.src,'L',800)">
+
+    <h3>Select Size</h3>
+
+    <button onclick="selectSize(this, 'S',500)">S</button>
+    <button onclick="selectSize(this, 'M',700)">M</button>
+    <button onclick="selectSize(this, 'L',800)">L</button>
+    <button onclick="selectSize(this, 'XL',1000)">XL</button>
+
+    <h3>Size: <span id="size">S</span></h3>
+
+    <h3>Price: ₹<span id="price">500</span></h3>
+
+    <button onclick="addToCart()">Add to Cart</button>
+
+</div>
+
+
+<script>
+//  
+    function changeImage(image,size,price) {
+        document.getElementById("mainimage").src = image;
+        document.getElementById("size").innerHTML = size;
+        document.getElementById("price").innerHTML = price;
+         
+        
+    }
+
+
+    function selectSize(size,price) {
+
+        document.getElementById("size").innerHTML = size;
+        document.getElementById("price").innerHTML = price;
+       
+
+    }
+
+
+    function addToCart() {
+
+        let size = document.getElementById("size").innerHTML;
+        let price = document.getElementById("price").innerHTML;
+
+        alert(
+            "Product Added!\n" +
+            "Size: " + size + "\n" +
+            "Price: ₹" + price
+        );
+
+    }
+
+</script>
+
+</body>
+</html>
+```
